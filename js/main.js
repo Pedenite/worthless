@@ -27,17 +27,6 @@ function makeList(qtd){
     }
 }
 
-function selectExercicio(num){
-    if(lista == 1){
-        switch(num){
-            case "1": l1e1()
-            break
-            case "2": l1e2()
-            break
-        }
-    }
-}
-
 function insertInput(qtd, phs){
     isEmpty = false
     for(var i = 0; i < qtd; i++){
