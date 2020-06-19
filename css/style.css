@@ -1,0 +1,39 @@
+body{
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #151616;
+    color: gainsboro;
+    width:100%;
+    margin: auto;
+}
+
+header{
+    width:100%;
+    background-color: #333;
+    top: 0;
+    position:fixed;
+}
+
+.container{
+    margin: 0px auto;
+    width: 70%;
+}
+
+main{
+    padding-top: 75px;
+}
+
+#menu-exercicio {
+    display: flex;
+}
+  
+#menu-exercicio > div {
+    background-image: linear-gradient(to right, rgb(78, 0, 0), rgb(158, 0, 0));
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    border: solid 1px rgb(65, 63, 63);
+    cursor: pointer;
+}
