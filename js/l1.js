@@ -6,6 +6,8 @@ function selectExercicio(num){
             case "2": l1e2()
             break
             case "3": l1e3()
+            break
+            default: alert("Exercício inexistente")
         }
     }
 }
@@ -34,7 +36,7 @@ function makeExercise(eTitle, phs, ex){
             break
             case 3: res = l1res3(form.member0.value, form.member1.value, form.member2.value, form.member3.value)
             break
-            default: alert("Exercício inexistente")
+            default: console.log("Impossible...")
         }
         var h2result = document.getElementById("result")
         h2result.textContent = "Result: " + res
