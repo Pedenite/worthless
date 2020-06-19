@@ -7,36 +7,39 @@ var button = document.querySelector("#submit")
 var menuEx = document.getElementById("menu-exercicio")
 var lista = 1
 
+var isEmpty = true
+
 switch(lista){
-    case 1: makeList(form, button, menuEx, 1, 7)
+    case 1: makeList(7)
     break
 }
 
-function makeList(form, button, menu, lista, qtd){
+function makeList(qtd){
     for(var i = 0; i < qtd; i++){
         var newDiv = document.createElement("div")
         newDiv.id = "opt" + i 
         newDiv.textContent = i+1
-        menu.appendChild(newDiv)  
+        menuEx.appendChild(newDiv) 
         newDiv.addEventListener("click", function(){
             event.preventDefault()
-            selectExercicio(form, button, lista, this.textContent)
+            selectExercicio(this.textContent)
         })
     }
 }
 
-function selectExercicio(form, button, lista, num){
+function selectExercicio(num){
     if(lista == 1){
         switch(num){
-            case "1": l1e1(form, button)
+            case "1": l1e1()
             break
-            case "2": l1e2(form, button)
+            case "2": l1e2()
             break
         }
     }
 }
 
-function insertInput(form, qtd, phs){
+function insertInput(qtd, phs){
+    isEmpty = false
     for(var i = 0; i < qtd; i++){
         var input = document.createElement("input")
         input.type = "text"

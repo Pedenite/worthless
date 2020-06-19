@@ -1,7 +1,17 @@
-function makeExercise(form, button, eTitle, phs, ex){
+function makeExercise(eTitle, phs, ex){
+    if(!isEmpty){
+        fChildren = form.children
+        for(var i = 0; form.children.length > 1; i++){
+            if(fChildren[i].tagName == "INPUT"){
+                form.removeChild(fChildren[i])
+                i--
+            }
+        }
+        isEmpty = true
+    }
     var titulo = document.getElementById("titulo-form")
     titulo.textContent = eTitle
-    insertInput(form, phs.length, phs)
+    insertInput(phs.length, phs)
     button.addEventListener("click", function (){
         event.preventDefault()
         var res
@@ -16,14 +26,14 @@ function makeExercise(form, button, eTitle, phs, ex){
     })
 }
 
-function l1e1(form, button){
+function l1e1(){
     var phs = ["a", "b", "c"]
-    makeExercise(form, button, "Exercício 1", phs, 1)
+    makeExercise("Exercício 1", phs, 1)
 }
 
-function l1e2(form, button){
+function l1e2(){
     var phs = ["num1", "num2"]
-    makeExercise(form, button, "Exercício 2", phs, 2)
+    makeExercise("Exercício 2", phs, 2)
 }
 
 function l1res1(a, b, c){
@@ -31,6 +41,5 @@ function l1res1(a, b, c){
 }
 
 function l1res2(num1, num2){
-    console.log(num1 + " " + num2 + " " + (num1+num2))
     return (parseInt(num1)+parseInt(num2))/2
 }
