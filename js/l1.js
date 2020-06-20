@@ -7,6 +7,10 @@ function selectExercicio(num){
             break
             case "3": l1e3()
             break
+            case "4": l1e4()
+            break
+            case "5": l1e5()
+            break
             default: alert("Exercício inexistente")
         }
     }
@@ -36,6 +40,9 @@ function makeExercise(eTitle, phs, ex){
             break
             case 3: res = l1res3(form.member0.value, form.member1.value, form.member2.value, form.member3.value)
             break
+            case 4: res = l1res4(form.member0.value, form.member1.value)
+            break
+            case 5: res = l1res5(form.member0.value, form.member1.value, form.member2.value)
             default: console.log("Impossible...")
         }
         var h2result = document.getElementById("result")
@@ -58,6 +65,16 @@ function l1e3(){
     makeExercise("Exercício 3", phs, 3)
 }
 
+function l1e4(){
+    var phs = ["Valor da compra", "Dias de atraso"]
+    makeExercise("Exercício 4", phs, 4)
+}
+
+function l1e5(){
+    var phs = ["Distância (metros)", "Horário de saída (hh:mm:ss)", "Horário de chegada (hh:mm:ss)"]
+    makeExercise("Exercício 5", phs, 5)
+}
+
 function l1res1(a, b, c){
     return (a**2-2*a*b+b**2)/((a-b)*(a-c))
 }
@@ -70,4 +87,23 @@ function l1res3(ax, ay, bx, by){
     let a = ax - bx
     let b = ay - by
     return Math.sqrt(a**2 + b**2)
+}
+
+function l1res4(v, da){
+    return +v + (da*0.05*v)
+}
+
+function l1res5(dm, ts, tc){
+    var timeS = ts.split(":")
+    var timeC = tc.split(":")
+    if(timeS.length != 3 || timeC.length != 3){
+        alert("Favor inserir os horários no formato hh:mm:ss")
+        return "Inválido"
+    }
+
+    ts = +timeS[2] + +timeS[1]*60 + +timeS[0]*3600
+    tc = +timeC[2] + +timeC[1]*60 + +timeC[0]*3600
+
+    var total = tc - ts
+    return (dm/1000)/(total/3600) + " km/h"
 }
