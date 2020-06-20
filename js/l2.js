@@ -70,7 +70,7 @@ function l2e5(){
 }
 
 function l2e6(){
-    var phs = ["Ponto A (x,y)", "Altura do retângulo", "Largura do retângulo", "Ponto B (x,y)"]
+    var phs = ["Ponto de origem do retângulo (x,y)", "Altura do retângulo", "Largura do retângulo", "Ponto P (x,y)"]
     makeExercise("Exercício 6", phs, 6)
 }
 
@@ -85,33 +85,110 @@ function l2e8(){
 }
 
 function l2res1(a, b){
-    
+    return a > b? a : b
 }
 
 function l2res2(a, b, c){
-    
+    var r = a < b? a : b
+    r = r < c? r : c
+    return r
 }
 
 function l2res3(imc){
-    
+    if(imc < 18){
+        return "abaixo do peso"
+    } else if (imc < 25){
+        return "saudável"
+    } else if (imc < 30){
+        return "peso em excesso"
+    } else if (imc < 35){
+        return "obeso"
+    } else if (imc < 40){
+        return "obesidade severa"
+    } else {
+        return "obesidade mórbida"
+    }
 }
 
 function l2res4(x){
-    
+    if(x < -1){
+        return 0
+    } else if(x < 0){
+        return 1
+    } else if(x <= 1){
+        return 2
+    } else {
+        return 3
+    }
 }
 
 function l2res5(acb){
-    
+    var op
+    if(acb.includes("+")){
+        op = acb.split("+")
+        return +op[0] + +op[1]
+    } else if(acb.includes("-")){
+        op = acb.split("-")
+        return op[0] - op[1]
+    } else if(acb.includes("*")){
+        op = acb.split("*")
+        return op[0] * op[1]
+    } else if(acb.includes("/")){
+        op = acb.split("/")
+        return op[0] / op[1]
+    } else {
+        return "não foi encontrado nenhum dos operadores válidos (\"+\", \"-\", \"*\", \"/\")"
+    }
 }
 
-function l2res6(A, h, l, B){
-    
+function l2res6(o, h, l, p){
+    o = o.split(",")
+    p = p.split(",")
+    var ans
+    if (o.length != 2 || p.length != 2){
+        return "Favor especificar os pontos no formato correto (x, y)"
+    }
+
+    var or = +o[0] + +l
+    var ou = +o[1] + +h 
+    if(p[0] >= o[0] && p[0] <= or && p[1] >= o[1] && p[1] <= ou){
+        if (p[0] == o[0] || p[0] == or || p[1] == o[1] || p[1] == ou){
+            ans = "em alguma das linhas que definem o retâgulo"
+        } else {
+            ans = "dentro do retângulo"
+        }
+    }  else {
+        ans = "fora do retângulo" 
+    }
+    return "P está " + ans
 }
 
 function l2res7(c){
-    
+    if(c == 'f' || c == 'F'){
+        return "mulher"
+    } else if (c == 'm' || c == 'M'){
+        return "homem"
+    } else {
+        return "caractere inválido!"
+    }
 }
 
 function l2res8(mf){
-
+    if (mf < 0){
+        return "nota inválida"
+    } else if (mf == 0){
+        return "SR"
+    } else if (mf < 3){
+        return "II"
+    } else if (mf < 5){
+        return "MI"
+    } else if (mf < 7){
+        return "MM"
+    } else if (mf < 9){
+        return "MS"
+    } else if (mf <= 10){
+        return "SS"
+    } else {
+        return "nota inválida"
+    }
 }

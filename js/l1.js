@@ -97,8 +97,7 @@ function l1res5(dm, ts, tc){
     var timeS = ts.split(":")
     var timeC = tc.split(":")
     if(timeS.length != 3 || timeC.length != 3){
-        alert("Favor inserir os horários no formato hh:mm:ss")
-        return "Inválido"
+        return "Favor inserir os horários no formato hh:mm:ss"
     }
 
     ts = +timeS[2] + +timeS[1]*60 + +timeS[0]*3600
@@ -121,8 +120,7 @@ function l1res7(a, b){
     var A = a.split("/")
     var B = b.split("/")
     if(![1, 2].includes(A.length) || ![1, 2].includes(B.length)){
-        alert("formato incorreto")
-        return "Inválido"
+        return "formato incorreto"
     }
     if(A.length == 1){
         A.push(1)
