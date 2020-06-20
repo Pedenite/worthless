@@ -11,6 +11,8 @@ function selectExercicio(num){
             break
             case "5": l1e5()
             break
+            case "6": l1e6()
+            break
             default: alert("Exercício inexistente")
         }
     }
@@ -43,6 +45,9 @@ function makeExercise(eTitle, phs, ex){
             case 4: res = l1res4(form.member0.value, form.member1.value)
             break
             case 5: res = l1res5(form.member0.value, form.member1.value, form.member2.value)
+            break
+            case 6: res = l1res6(form.member0.value)
+            break
             default: console.log("Impossible...")
         }
         var h2result = document.getElementById("result")
@@ -73,6 +78,11 @@ function l1e4(){
 function l1e5(){
     var phs = ["Distância (metros)", "Horário de saída (hh:mm:ss)", "Horário de chegada (hh:mm:ss)"]
     makeExercise("Exercício 5", phs, 5)
+}
+
+function l1e6(){
+    var phs = ["Tempo (segundos)"]
+    makeExercise("Exercício 6", phs, 6)
 }
 
 function l1res1(a, b, c){
@@ -106,4 +116,13 @@ function l1res5(dm, ts, tc){
 
     var total = tc - ts
     return (dm/1000)/(total/3600) + " km/h"
+}
+
+function l1res6(z){
+    var x = Math.floor(z/3600)
+    z %= 3600
+    var y = Math.floor(z/60)
+    z %= 60
+
+    return x + " horas, " + y + " minutos, " + z + " segundos!"
 }

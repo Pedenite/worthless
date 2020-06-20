@@ -52,7 +52,8 @@ input{
     border: 0px;
     background-color: rgb(95, 95, 95);
     text-align: center;
-    width: fit-content;
+    width: 300px;
+    outline: none;
     font-size: 20px;
     color:gainsboro;
 }
