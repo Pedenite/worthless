@@ -13,6 +13,8 @@ function selectExercicio(num){
             break
             case "6": l1e6()
             break
+            case "7": l1e7()
+            break
             default: alert("Exercício inexistente")
         }
     }
@@ -47,6 +49,8 @@ function makeExercise(eTitle, phs, ex){
             case 5: res = l1res5(form.member0.value, form.member1.value, form.member2.value)
             break
             case 6: res = l1res6(form.member0.value)
+            break
+            case 7: res = l1res7(form.member0.value, form.member1.value)
             break
             default: console.log("Impossible...")
         }
@@ -83,6 +87,11 @@ function l1e5(){
 function l1e6(){
     var phs = ["Tempo (segundos)"]
     makeExercise("Exercício 6", phs, 6)
+}
+
+function l1e7(){
+    var phs = ["A (numerador/denominador)", "B (numerador/denominador)"]
+    makeExercise("Exercício 7", phs, 7)
 }
 
 function l1res1(a, b, c){
@@ -125,4 +134,23 @@ function l1res6(z){
     z %= 60
 
     return x + " horas, " + y + " minutos, " + z + " segundos!"
+}
+
+function l1res7(a, b){
+    var A = a.split("/")
+    var B = b.split("/")
+    if(![1, 2].includes(A.length) || ![1, 2].includes(B.length)){
+        alert("formato incorreto")
+        return "Inválido"
+    }
+    if(A.length == 1){
+        A.push(1)
+    }
+    if(B.length == 1){
+        B.push(1)
+    }
+
+    var num = A[0]*B[1] + B[0]*A[1]
+    var den = A[1] * B[1]
+    return num + "/" + den
 }
