@@ -8,8 +8,13 @@
 	</head>
 	<body>
 		<header>
-			<div class="container">
+			<div class="container" style="display:flex;">
 				<h1 id="titulo">Selecione a lista:</h1>
+				<select id="lista-select" onchange="selectList()">
+					<option disabled selected value>escolha</option>
+					<option value="1">Primeira lista</option>
+					<option value="2">Segunda lista</option>
+				</select>
 			</div>
 		</header>
 		
@@ -27,7 +32,8 @@
 		<div class="container" id="menu-exercicio">
 			
 		</div>
-	<script src="js/l1.js"></script>
-	<script src="js/main.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/l1.js"></script>
+		<script src="js/l2.js"></script>
 	</body>
 </html>

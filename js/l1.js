@@ -1,62 +1,43 @@
-function selectExercicio(num){
-    if(lista == 1){
-        switch(num){
-            case "1": l1e1()
-            break
-            case "2": l1e2()
-            break
-            case "3": l1e3()
-            break
-            case "4": l1e4()
-            break
-            case "5": l1e5()
-            break
-            case "6": l1e6()
-            break
-            case "7": l1e7()
-            break
-            default: alert("Exercício inexistente")
-        }
+function l1SelectExercicio(num){
+    switch(num){
+        case "1": l1e1()
+        break
+        case "2": l1e2()
+        break
+        case "3": l1e3()
+        break
+        case "4": l1e4()
+        break
+        case "5": l1e5()
+        break
+        case "6": l1e6()
+        break
+        case "7": l1e7()
+        break
+        default: alert("Exercício inexistente")
     }
 }
 
-function makeExercise(eTitle, phs, ex){
-    if(!isEmpty){
-        fChildren = form.children
-        for(var i = 0; form.children.length > 1; i++){
-            if(fChildren[i].tagName == "INPUT"){
-                form.removeChild(fChildren[i])
-                i--
-            }
-        }
-        isEmpty = true
+function l1SelectResposta(num){
+    var res
+    switch(num){
+        case 1: res = l1res1(form.member0.value, form.member1.value, form.member2.value)
+        break
+        case 2: res = l1res2(form.member0.value, form.member1.value)
+        break
+        case 3: res = l1res3(form.member0.value, form.member1.value, form.member2.value, form.member3.value)
+        break
+        case 4: res = l1res4(form.member0.value, form.member1.value)
+        break
+        case 5: res = l1res5(form.member0.value, form.member1.value, form.member2.value)
+        break
+        case 6: res = l1res6(form.member0.value)
+        break
+        case 7: res = l1res7(form.member0.value, form.member1.value)
+        break
+        default: console.log("Impossible...")
     }
-    var titulo = document.getElementById("titulo-form")
-    titulo.textContent = eTitle
-    insertInput(phs.length, phs)
-    button.addEventListener("click", function (){
-        event.preventDefault()
-        var res
-        switch(ex){
-            case 1: res = l1res1(form.member0.value, form.member1.value, form.member2.value)
-            break
-            case 2: res = l1res2(form.member0.value, form.member1.value)
-            break
-            case 3: res = l1res3(form.member0.value, form.member1.value, form.member2.value, form.member3.value)
-            break
-            case 4: res = l1res4(form.member0.value, form.member1.value)
-            break
-            case 5: res = l1res5(form.member0.value, form.member1.value, form.member2.value)
-            break
-            case 6: res = l1res6(form.member0.value)
-            break
-            case 7: res = l1res7(form.member0.value, form.member1.value)
-            break
-            default: console.log("Impossible...")
-        }
-        var h2result = document.getElementById("result")
-        h2result.textContent = "Result: " + res
-    })
+    return res
 }
 
 function l1e1(){
