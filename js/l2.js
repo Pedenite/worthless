@@ -137,7 +137,7 @@ function l2res5(acb){
         op = acb.split("/")
         return op[0] / op[1]
     } else {
-        return "não foi encontrado nenhum dos operadores válidos (\"+\", \"-\", \"*\", \"/\")"
+        return "não foi encontrado nenhum dos operadores válidos<br>(\"+\", \"-\", \"*\", \"/\")"
     }
 }
 
@@ -146,7 +146,7 @@ function l2res6(o, h, l, p){
     p = p.split(",")
     var ans
     if (o.length != 2 || p.length != 2){
-        return "Favor especificar os pontos no formato correto (x, y)"
+        return "Favor especificar os pontos no formato correto (x,y)"
     }
 
     var or = +o[0] + +l

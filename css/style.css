@@ -19,10 +19,12 @@ select{
     width:200px;
     margin-top:20px;
     margin-left: 100px;
+    outline: none;
     background-color: rgb(70, 70, 70);
     color:rgb(182, 182, 182);
     border-radius: 100px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .container{
@@ -88,4 +90,16 @@ button{
 }
 button:hover{
     background-image: linear-gradient(to bottom, lightblue, royalblue);
+}
+
+table, caption{
+    width: 100%;
+    border: 1px solid gainsboro;
+    border-collapse: collapse;
+}
+tr,td{
+    border-right:1px solid gainsboro;
+    white-space: nowrap;
+    padding:5px;
+    text-align: center;
 }
