@@ -108,7 +108,7 @@ function l3res1(n){
         }
         var res
         if(valido){
-            res = "<br>Média de alturas: " + ma/n + "<br>Média de idades: " + mi/n
+            res = "<br>Média de alturas: " + (ma/n).toFixed(2) + "<br>Média de idades: " + mi/n
         } else {
             res = "<span class=\"error\">n, Altura e idade devem ser maiores que 0!</span>"
         }
