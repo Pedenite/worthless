@@ -137,7 +137,7 @@ function l2res5(acb){
         op = acb.split("/")
         return op[0] / op[1]
     } else {
-        return "não foi encontrado nenhum dos operadores válidos<br>(\"+\", \"-\", \"*\", \"/\")"
+        return "<span class=\"error\">não foi encontrado nenhum dos operadores válidos<br>(\"+\", \"-\", \"*\", \"/\")</span>"
     }
 }
 
@@ -146,7 +146,7 @@ function l2res6(o, h, l, p){
     p = p.split(",")
     var ans
     if (o.length != 2 || p.length != 2){
-        return "Favor especificar os pontos no formato correto (x,y)"
+        return "<span class=\"error\">Favor especificar os pontos no formato correto (x,y)</span>"
     }
 
     var or = +o[0] + +l
@@ -169,13 +169,14 @@ function l2res7(c){
     } else if (c == 'm' || c == 'M'){
         return "homem"
     } else {
-        return "caractere inválido!"
+        return "<span class=\"error\">caractere inválido!</span>"
     }
 }
 
 function l2res8(mf){
+    var err = "<span class=\"error\">nota inválida!</span>"
     if (mf < 0){
-        return "nota inválida"
+        return err
     } else if (mf == 0){
         return "SR"
     } else if (mf < 3){
@@ -189,6 +190,6 @@ function l2res8(mf){
     } else if (mf <= 10){
         return "SS"
     } else {
-        return "nota inválida"
+        return err
     }
 }
