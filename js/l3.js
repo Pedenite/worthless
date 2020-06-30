@@ -77,7 +77,7 @@ function l3e7(){
 
 function l3res1(n){
     insideFunc = true
-    if(n <= 0){
+    if(n <= 0 || isNaN(n)){
         return "<span class=\"error\">Inválido</span>"
     }
     clearForm()
